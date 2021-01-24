@@ -1,7 +1,7 @@
 import React from "react";
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {Elements, ElementsView, IElement} from "../../types";
-import {device} from "../../device";
+import {device} from "../../tools/device";
 
 export interface ElementsProps {
     data: Array<IElement>

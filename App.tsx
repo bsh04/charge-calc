@@ -2,7 +2,7 @@ import {StatusBar} from 'expo-status-bar';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Router} from "./src/router";
-import {device} from "./src/device";
+import {device} from "./src/tools/device";
 import {Provider} from "react-redux";
 import {store} from "./src/redux/store";
 import AsyncStorage from "@react-native-async-storage/async-storage"

@@ -1,33 +1,35 @@
 import React from 'react';
-import {Elements, ElementsView, IElement, SubstancesData} from "../types";
+import {Elements, ElementsView, IElement, SubstancesData, SubstanceView, TableTitleView} from "../types";
 import {View, StyleSheet, Text, TextInput} from "react-native";
-import {device} from "../device";
-import {Input} from "react-native-elements";
 
 interface TableProps {
-    data: Array<IElement>
-    headers: Array<IElement>
-    setData: (element: Elements, value: number | string) => void
+    data?: Array<IElement>
+    headers?: Array<IElement>
+    setData?: (element: Elements, value: number | string) => void
+    mainElement?: Elements
+    editable?: boolean
 }
 
-export const Table: React.FC<TableProps> = ({data, headers, setData}) => {
+export const Table: React.FC<TableProps> = ({data, headers, setData, mainElement, editable}) => {
     return (
         <View style={styles.container}>
             <View style={styles.headers}>
-                {headers.map((item, index) => (
+                {headers?.map((item, index) => (
                     <View style={[styles.header, {borderRightWidth: index + 1 === headers.length ? 0 : 1}]} key={index}>
-                        <Text style={[styles.textHeader, {color: "#fff"}]}>{ElementsView[item.title]}</Text>
+                        <Text style={[styles.textHeader, {color: "#fff"}]}>{TableTitleView[item.title]}</Text>
                     </View>
                 ))}
             </View>
             <View style={[{flexDirection: "row", backgroundColor: "#b0bec5", height: 30}]}>
-                {data.map((item, index) => (
-                    <View style={[styles.header, {borderRightWidth: index + 1 === headers.length ? 0 : 1}]} key={index}>
+                {data?.map((item, index) => (
+                    <View style={[styles.header, {borderRightWidth: index + 1 === headers?.length ? 0 : 1, backgroundColor: item.title === mainElement ? "#81c784" : "#b0bec5"}]} key={index}>
                         <TextInput
+                            editable={editable}
                             value={item.value ? String(item.value) : undefined}
                             placeholder={"0"}
+                            style={{fontWeight: !editable ? "bold" : "400", color: !editable ? "#1a237e" : "#111"}}
                             keyboardType={"numeric"}
-                            onChange={(e) => setData(item.title, e.nativeEvent.text)}
+                            onChange={(e) => setData ? setData(item.title as Elements, e.nativeEvent.text) : {}}
                             textAlign={"center"}
                             selectionColor={"#546e7a"}
                         />

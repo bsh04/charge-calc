@@ -7,14 +7,24 @@ export interface IElements {
 }
 
 export interface IElement {
-    title: Elements
+    title: Elements | Substance
     value?: number | string
 }
 
 export interface SubstancesData {
-    name: Substance
+    name: Substance | Elements
     mainElement: Elements
     resultPercent: number
+    elements: Array<IElement>
+}
+
+export interface IMass {
+    name: Substance
+    value: number
+}
+
+export interface IAdmixtures {
+    name: Substance
     elements: Array<IElement>
 }
 
@@ -49,7 +59,9 @@ export const ElementsView = {
     [Elements.ro2]: "Щелочи",
 }
 
-export enum FORM {
-    Elements = "Elements"
+export const TableTitleView = {
+    ...ElementsView,
+    ...SubstanceView,
 }
+
 
