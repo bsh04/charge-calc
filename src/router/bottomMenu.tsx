@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
-import {Elements} from "../screens/Elements"
-import {Calculation} from "../screens/Calculation"
+import {Elements} from "../screens/Elements/Elements"
+import {Calculation} from "../screens/Calculation/Calculation"
 import {Icon} from "react-native-elements";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useDispatch} from "react-redux";

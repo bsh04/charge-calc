@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, TextInput, ScrollView} from "react-native";
-import {Header} from "../components/Header";
-import {useSaveElements} from "./Elements/hooks/useSaveElements";
+import {Header} from "../../components/Header";
+import {useSaveElements} from "./hooks/useSaveElements";
 import {ElementsForm} from "./ElementsForm";
-import {Elements as ElementsType, IElement, IElements} from "../types";
+import {Elements as ElementsType, IElement, IElements} from "../../types";
 import {useSelector} from "react-redux";
-import {elementsSelectors} from "../redux/slices/elementsSlice";
+import {elementsSelectors} from "../../redux/slices/elementsSlice";
 import {Button} from "react-native-elements";
 
 

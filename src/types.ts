@@ -11,6 +11,28 @@ export interface IElement {
     value?: number | string
 }
 
+export interface SubstancesData {
+    name: Substance
+    mainElement: Elements
+    resultPercent: number
+    elements: Array<IElement>
+}
+
+export enum Substance {
+    Sand = "SAND",
+    Spar = "SPAR",
+    Marble = "MARBLE",
+    Dolomite = "DOLOMITE",
+}
+
+export const SubstanceView = {
+    [Substance.Sand]: "Песок",
+    [Substance.Spar]: "Шпат",
+    [Substance.Marble]: "Мрамор",
+    [Substance.Dolomite]: "Доломит",
+
+}
+
 export enum Elements {
     silicon =  "SILICON", // Кремний
     r2o3 = "R2O3",

@@ -1,6 +1,7 @@
 import React from "react";
 import {StyleSheet, Text, TextInput, View} from "react-native";
-import {Elements, ElementsView, IElement} from "../types";
+import {Elements, ElementsView, IElement} from "../../types";
+import {device} from "../../device";
 
 export interface ElementsProps {
     data: Array<IElement>
@@ -39,14 +40,16 @@ const styles = StyleSheet.create({
     inputLabel: {
         paddingBottom: 5,
         fontSize: 16,
+        fontWeight: "bold",
     },
     inputCont: {
         paddingBottom: 20,
+        alignItems: "center"
     },
     input: {
         borderWidth: 1,
         borderRadius: 10,
-        width: "50%",
+        width: "80%",
         padding: 5,
         borderColor: "#111"
     }
