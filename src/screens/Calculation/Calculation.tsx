@@ -62,8 +62,22 @@ export const Calculation: React.FC = () => {
                         </View>
                     ))
                 }
+                <View style={{flexDirection: "row", alignItems: "center"}}>
+                    <View style={styles.legend}>
+                        <View style={styles.legendPoint}/>
+                        <Text style={styles.legendTitle}> — основной элемент </Text>
+                    </View>
+                    <View style={styles.legend}>
+                        <View style={[styles.legendPoint, {backgroundColor: "#b0bec5"}]}/>
+                        <Text style={styles.legendTitle}> — обычный элемент </Text>
+                    </View>
+                </View>
+                <View style={styles.hrCont}>
+                    <View style={styles.hr}/>
+                </View>
                 <Text style={styles.title}>Результаты</Text>
                 <Table data={resultTableData?.data} headers={resultTableData?.headers} editable={false}/>
+                <View style={{paddingBottom: 20}}/>
             </ScrollView>
             <Button
                 containerStyle={{padding: 10}}
@@ -78,10 +92,35 @@ const styles = StyleSheet.create({
     container: {
         height: device.height,
     },
+    legendPoint: {
+        width: 15,
+        height: 15,
+        borderRadius: 50,
+        backgroundColor: "#81c784",
+    },
+    legendTitle: {
+        fontStyle: "italic",
+        fontSize: 16,
+    },
+    legend: {
+        paddingBottom: 10,
+        paddingLeft: 10,
+        flexDirection: "row",
+        alignItems: "center"
+    },
     title: {
         fontSize: 16,
         paddingVertical: 10,
         fontWeight: "bold",
         textAlign: "center",
+    },
+    hrCont: {
+        width: device.width,
+        alignItems: "center",
+    },
+    hr: {
+        width: device.width * .95,
+        height: 1,
+        backgroundColor: "#ccc"
     },
 })

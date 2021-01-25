@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import {Elements} from "../screens/Elements/Elements"
 import {Calculation} from "../screens/Calculation/Calculation"
-import {Icon} from "react-native-elements";
+import {Icon, Text} from "react-native-elements";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useDispatch} from "react-redux";
 import {elementsSlice} from "../redux/slices/elementsSlice";
@@ -38,10 +38,12 @@ export const BottomMenu = () => {
                 }
             }}>
                 <BottomTabNavigator.Screen name={"Элементы"} component={Elements} options={{
-                    tabBarIcon: () => <Icon name={"chemical-weapon"} color={"white"} type={"material-community"} />,
+                    tabBarLabel: ({focused}) => <Text style={{color: "white", fontSize: 16, opacity: !focused ? 0.6 : 1}}>Элементы</Text>,
+                    tabBarIcon: ({focused}) => <Icon name={"chemical-weapon"} color={"white"} type={"material-community"} style={{opacity: !focused ? 0.6 : 1}}  />,
                 }} />
                 <BottomTabNavigator.Screen name={"Рассчёт"} component={Calculation} options={{
-                    tabBarIcon: () => <Icon name={"chemistry"} color={"white"} type={"simple-line-icon"} />
+                    tabBarLabel: ({focused}) => <Text style={{color: "white", fontSize: 16, opacity: !focused ? 0.6 : 1}}>Рассчёт</Text>,
+                    tabBarIcon: ({focused}) => <Icon name={"calculator"} color={"white"} type={"font-awesome"} style={{opacity: !focused ? 0.6 : 1}} />
                 }} />
             </BottomTabNavigator.Navigator>
         )

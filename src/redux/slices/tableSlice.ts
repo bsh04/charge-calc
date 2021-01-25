@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Elements, Substance, SubstancesData} from "../../types";
+import {Elements, IElement, Substance, SubstancesData} from "../../types";
 
 interface SliceState {
     data: Array<SubstancesData>
@@ -9,8 +9,8 @@ const initialState = {
     data: [
         {
             name: Substance.Sand,
-            mainElement:Elements.silicon,
-            resultPercent: 72.4,
+            mainElement: Elements.silicon,
+            resultPercent: 0,
             elements: [
                 {
                     title: Elements.silicon,
@@ -37,7 +37,7 @@ const initialState = {
         {
             name: Substance.Spar,
             mainElement: Elements.r2o3,
-            resultPercent: 1.8,
+            resultPercent: 0,
             elements: [
                 {
                     title: Elements.silicon,
@@ -64,7 +64,7 @@ const initialState = {
         {
             name: Substance.Marble,
             mainElement: Elements.cal,
-            resultPercent: 10.2,
+            resultPercent: 0,
             elements: [
                 {
                     title: Elements.silicon,
@@ -90,8 +90,8 @@ const initialState = {
         },
         {
             name: Substance.Dolomite,
-            mainElement:Elements.magne,
-            resultPercent: 2.0,
+            mainElement: Elements.magne,
+            resultPercent: 0,
             elements: [
                 {
                     title: Elements.silicon,
@@ -99,7 +99,7 @@ const initialState = {
                 },
                 {
                     title: Elements.r2o3,
-                    value:0.36
+                    value: 0.36
                 },
                 {
                     title: Elements.cal,
@@ -124,7 +124,7 @@ export const tableSlice = createSlice({
     reducers: {
         setData(state: SliceState, action: PayloadAction<Array<SubstancesData>>) {
             state.data = action.payload
-        }
+        },
     }
 })
 
