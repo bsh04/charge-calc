@@ -21,7 +21,7 @@ export const Elements: React.FC = () => {
 
 
     return (
-        <>
+        <View style={{flex: 1}}>
             <Header isMenuOpen title={"Элементы"}/>
             <ScrollView style={styles.container}>
                 <ElementsForm data={elements}
@@ -36,7 +36,7 @@ export const Elements: React.FC = () => {
                 containerStyle={styles.buttonStyles}
                 buttonStyle={styles.button}
             />
-        </>
+        </View>
     );
 };
 

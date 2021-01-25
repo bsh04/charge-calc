@@ -6,8 +6,11 @@ import {Icon, Text} from "react-native-elements";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useDispatch} from "react-redux";
 import {elementsSlice} from "../redux/slices/elementsSlice";
+import {createStackNavigator} from "@react-navigation/stack";
 
 const BottomTabNavigator = createBottomTabNavigator()
+
+const StackNavigator = createStackNavigator()
 
 const getItemsStore = async () => {
     const dispatch = useDispatch()
@@ -23,7 +26,7 @@ export const BottomMenu = () => {
 
     if (ready) {
         return (
-            <BottomTabNavigator.Navigator tabBarOptions={{
+            <BottomTabNavigator.Navigator sceneContainerStyle={{flex: 1}} tabBarOptions={{
                 style: {
                     height: 60
                 },
