@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({title, isGoBack, isMenuOpen, isIn
 
     const defaultTextInfo = (
         <View>
-            <Text style={{fontSize: 16, lineHeight: 23}}>Для рассчёта необходимо ввести данные в соответствующие окна.{"\n\n"}Для управления
+            <Text style={{fontSize: 16, lineHeight: 23}}>Для расчёта необходимо ввести данные в соответствующие окна.{"\n\n"}Для управления
                 результирующим значением элементов перейдите на вкладку "Элементы" или&nbsp;
                 <Text
                     style={styles.link}

@@ -41,7 +41,7 @@ export const Calculation: React.FC = () => {
 
     return (
         <>
-            <Header isMenuOpen title={"Рассчёт"} isInfo/>
+            <Header isMenuOpen title={"Расчёт"} isInfo/>
             <ScrollView style={styles.container}>
                 {
                     data.map((item, index) => (

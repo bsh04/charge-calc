@@ -50,7 +50,7 @@ export const Log = () => {
 
     return ready ? (
         <>
-            <Header title={"Журнал рассчётов"} isMenuOpen isInfo
+            <Header title={"Журнал расчётов"} isMenuOpen isInfo
                     textInfo={<Text style={{fontSize: 16, lineHeight: 23}}>Здесь будут отображаться предыдущие результаты
                         вычислений.{"\n\n"}Для сохранения изменений нажмите <Text style={{color: "#4caf50"}}>"Применить"</Text>{"\n\n"}Для получения актуальных
                         данных нажмите <Text style={{color: "#1565c0"}}>"Обновить"</Text></Text>}/>

@@ -44,8 +44,8 @@ export const BottomMenu = () => {
                     tabBarLabel: ({focused}) => <Text style={{color: "white", fontSize: 16, opacity: !focused ? 0.6 : 1}}>Элементы</Text>,
                     tabBarIcon: ({focused}) => <Icon name={"chemical-weapon"} color={"white"} type={"material-community"} style={{opacity: !focused ? 0.6 : 1}}  />,
                 }} />
-                <BottomTabNavigator.Screen name={"Рассчёт"} component={Calculation} options={{
-                    tabBarLabel: ({focused}) => <Text style={{color: "white", fontSize: 16, opacity: !focused ? 0.6 : 1}}>Рассчёт</Text>,
+                <BottomTabNavigator.Screen name={"Расчёт"} component={Calculation} options={{
+                    tabBarLabel: ({focused}) => <Text style={{color: "white", fontSize: 16, opacity: !focused ? 0.6 : 1}}>Расчёт</Text>,
                     tabBarIcon: ({focused}) => <Icon name={"calculator"} color={"white"} type={"font-awesome"} style={{opacity: !focused ? 0.6 : 1}} />
                 }} />
             </BottomTabNavigator.Navigator>
