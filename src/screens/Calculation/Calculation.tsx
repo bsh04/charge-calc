@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {ScrollView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Button} from "react-native-elements"
 import {Header} from "../../components/Header";
 import {useSelector} from "react-redux";
@@ -10,6 +10,7 @@ import {Elements, IElement, Substance, SubstancesData, TableTitleView} from "../
 import {device} from "../../tools/device";
 import {useCalculate} from "./hooks/useCalculate";
 import {resultSelectors} from "../../redux/slices/resultSlice";
+import {useNavigation} from "@react-navigation/native"
 
 interface ResultTableData {
     headers: Array<IElement>
@@ -37,9 +38,10 @@ export const Calculation: React.FC = () => {
         start(data)
     }
 
+
     return (
         <>
-            <Header isMenuOpen title={"Рассчёт"}/>
+            <Header isMenuOpen title={"Рассчёт"} isInfo/>
             <ScrollView style={styles.container}>
                 {
                     data.map((item, index) => (

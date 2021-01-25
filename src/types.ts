@@ -18,6 +18,12 @@ export interface SubstancesData {
     elements: Array<IElement>
 }
 
+export interface StoreLog {
+    id: number
+    time: string
+    data: Array<{name: Substance | Elements.ro2, value: number}>
+}
+
 export interface IMass {
     name: Substance
     value: number
